@@ -39,3 +39,4 @@
 * A futás hibára fog futni ugyanis a dusk böngészben próbálja megnyitni az oldalt egy .env.dusk.local nevű fájl alapján. Ha ezt a fájlt nem találja akkor az alapértelmezett .env alapján fogja megnyitni az oldalt. A teszteléshez indítsuk el a fejlesztői szervert egy külön terminál ablakban.
 
       php artisan serve
+* Folytassuk a teszt osztály készítését egy olyan tesztesettel ami hibára fut. A hibás tesztesetről készült képernyőképek megtekinthetőek a teszt mellett található [screenshots](tests/Browser/screenshots) mappában
