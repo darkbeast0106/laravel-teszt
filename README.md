@@ -17,7 +17,7 @@
 * Készítsünk egy új php fájlt Sor.php néven az app mappán belül
   * [A fájl tartalma](app/Sor.php)
 * Készítsünk egy új unit testet az elkészült osztályhoz
-  * Adjuk ki az alábbi utasítást (Beszéljünk unit vs feature testről és a phpunit.xml tartarmáról)
+  * Adjuk ki az alábbi utasítást (Beszéljünk unit vs feature tesztről és a [phpunit.xml](phpunit.xml) tartarmáról)
 
         php artisan make:test SorTest --unit
   * Készítsük el a szükséges [teszt fájlt](tests/Unit/SorTest.php) legyen hibára futó teszteset is az elején
@@ -28,6 +28,7 @@
 * Az elkészült oldalhoz készítsünk Feature tesztet [RoutingTest](tests/Feature/RoutingTest.php) néven az alábbi utasítást kiadva
 
       php artisan make:test RoutingTest
+* Módosítsuk a [phpunit.xml](phpunit.xml)-el belül a coverage részt, hogy a web útvonalainkat és a Sor.php-t vegye csak figyelembe a lefedetség.
 * Teszteljük a navigációt is, amihez szükség lesz a [Dusk](https://github.com/laravel/dusk) Laravel könyvtárra. Telepítsük a könyvtárt majd hozzunk létre egy [Teszt osztályt](tests/Browser/NavigacioTest.php) a navigáció teszteléséhez az alábbi utasítások kiadásával
 
       composer require --dev laravel/dusk
