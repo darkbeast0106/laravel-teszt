@@ -106,18 +106,19 @@
     php artisan test --coverage --testsuite=Article
     ```
 
-    - A tesztesetnek hibára kell futnia hiszen a factorynak még nincs tartalma.
-  - Készítsük el az [ArticleFactory-t](database/factories/ArticleFactory.php)
-    - Futtassuk az előző parancsot, ezúttal sikeres kimenettel.
-  - Készítsük el a második tesztesetünket is, majd futtassuk le.
-    - Ismét hibára fog futni, hiszen nem volt még seeder létrehozva.
-  - Egészítsük ki a [ArticleSeeder](database/seeders/ArticleSeeder.php) és a [DatabaseSeeder](database/seeders/DatabaseSeeder.php) állományokat a szükséges sorokkal.
-    - Futassuk újbol a tesztet.
-    - Vegyük észre, hogy a teszt továbbra is hibára fut, és az adatbázisban a rekordok száma minden teszteléssel tovább nő.
-    - A konfigurációs fájlban állítsuk be, hogy az adatbázis memóriában tárolt sqlite adatbázis legyen. A teszt továbbra is hibára fut így vonjuk vissza a beállítást.
-    - Vegyük használatba a RefreshDatabase névteret a tesztesetünkben, majd futassuk újra a tesztet.
-      - A teszt ezúttal nem fog hibára futni, viszont az adatbázisunk kiürül.
-      - Az előző észrevételeink alapján kombináljuk a kettőt: RefreshDatabase és memóriában tárolt sqlite adatbázissal futassuk a teszteket.
-    - Készítsük el az utolsó tesztesetünket. Ehhez a [modelben](app/Models/Article.php) létre kell hoznunk egy új függvényt.
-    - Futtassuk újra a tesztesetünket.
-      - Debuggerrel nézzük meg, hogy mi történik a teszt futása alatt.
+  - A tesztesetnek hibára kell futnia hiszen a factorynak még nincs tartalma.
+- Készítsük el az [ArticleFactory-t](database/factories/ArticleFactory.php)
+  - Futtassuk az előző parancsot, ezúttal sikeres kimenettel.
+- Készítsük el a második tesztesetünket is, majd futtassuk le.
+  - Ismét hibára fog futni, hiszen nem volt még seeder létrehozva.
+- Egészítsük ki a [ArticleSeeder](database/seeders/ArticleSeeder.php) és a [DatabaseSeeder](database/seeders/DatabaseSeeder.php) állományokat a szükséges sorokkal.
+  - Futassuk újbol a tesztet.
+  - Vegyük észre, hogy a teszt továbbra is hibára fut, és az adatbázisban a rekordok száma minden teszteléssel tovább nő.
+- A konfigurációs fájlban állítsuk be, hogy az adatbázis memóriában tárolt sqlite adatbázis legyen.
+  - A teszt továbbra is hibára fut így vonjuk vissza a beállítást.
+- Vegyük használatba a RefreshDatabase névteret a tesztesetünkben, majd futassuk újra a tesztet.
+  - A teszt ezúttal nem fog hibára futni, viszont az adatbázisunk kiürül.
+- Az előző észrevételeink alapján kombináljuk a kettőt: RefreshDatabase és memóriában tárolt sqlite adatbázissal futassuk a teszteket.
+- Készítsük el az utolsó tesztesetünket. Ehhez a [modelben](app/Models/Article.php) létre kell hoznunk egy új függvényt.
+- Futtassuk újra a tesztesetünket.
+  - Debuggerrel nézzük meg, hogy mi történik a teszt futása alatt.
