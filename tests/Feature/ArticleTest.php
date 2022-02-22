@@ -11,16 +11,16 @@ class ArticleTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_seed_count()
-    {
-        $this->seed();
-        $this->assertDatabaseCount('articles', 30);
-    }
-
     public function test_model_exists()
     {
         $article = Article::factory()->create();
         $this->assertModelExists($article);
+    }
+
+    public function test_seed_count()
+    {
+        $this->seed();
+        $this->assertDatabaseCount('articles', 30);
     }
 
     public function test_most_viewed()
